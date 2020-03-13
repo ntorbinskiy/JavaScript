@@ -17,20 +17,16 @@ let appData = {
 };
 
 
- let expenseName1 = prompt( "Введите обязательную статью расходов в этом месяце"),
- cost1 = prompt("Во сколько обойдется?"),
- expenseName2 = prompt( "Введите обязательную статью расходов в этом месяце"),
- cost2 = prompt("Во сколько обойдется?"); 
- 
- 
-  (appData.expenses[expenseName1]) = Number(cost1),
+let expenseName1 = prompt( "Введите обязательную статью расходов в этом месяце"),
+    cost1 = prompt("Во сколько обойдется?"),
+    expenseName2 = prompt( "Введите обязательную статью расходов в этом месяце"),
+    cost2 = prompt("Во сколько обойдется?"); 
+    (appData.expenses[expenseName1]) = Number(cost1),
     (appData.expenses[expenseName2]) = Number(cost2);
-console.log(appData);
 
+    console.log(appData);
 let dayBudgetExpenses = appData.expenses[expenseName1] - appData.expenses[expenseName2]
-
  let dayBudget = (appData.budget - dayBudgetExpenses)/30;
-
  alert( "Ваш бюджет на день: " + dayBudget); 
 
 
