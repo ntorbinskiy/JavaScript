@@ -13,21 +13,58 @@ let appData = {
     }, // объект с обязательными расходами 
     optionalExpenses: {}, // объект с необязательными расходами
     income: [], // массив данных с доп. доходом
-    savings: false // свойство 
+    savings: false, // свойство 
+    
 };
 
 
-let expenseName1 = prompt( "Введите обязательную статью расходов в этом месяце"),
-    cost1 = prompt("Во сколько обойдется?"),
-    expenseName2 = prompt( "Введите обязательную статью расходов в этом месяце"),
-    cost2 = prompt("Во сколько обойдется?"); 
-    (appData.expenses[expenseName1]) = Number(cost1),
-    (appData.expenses[expenseName2]) = Number(cost2);
+/* for (let i = 0; i < 2; i++) {
+    let a = prompt ("Введите обязательную статью расходов в этом месяце", ""),
+        b = prompt ("Во сколько обойдется?", "");
 
+    if ( typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
+
+        console.log ("done");
+
+        appData.expenses[a] = b;
+    } else {                            
+        console.log ("bad result");
+        i--;
+    }
+ 
+};*/
+/*  let i = 0;
+while(i<2) {
+let a = prompt ("Введите обязательную статью расходов в этом месяце", ""),
+    b = prompt ("Во сколько обойдется?", "");
+
+if ( typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
+    console.log ("done");
+    appData.expenses[a] = b;} 
+    else {                            
+    console.log ("bad result");
+    i--;
+    }
+    i++;
+}
+ */  let i = 0; 
+ do {
+    let a = prompt ("Введите обязательную статью расходов в этом месяце", ""),
+        b = prompt ("Во сколько обойдется?", "");
+if ( typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
+    console.log ("done");
+    appData.expenses[a] = b;
+} else {                            
+    console.log ("bad result");
+    i--;
+}
+}
+while(i<2); 
     console.log(appData);
-let dayBudgetExpenses = appData.expenses[expenseName1] - appData.expenses[expenseName2]
- let dayBudget = (appData.budget - dayBudgetExpenses)/30;
- alert( "Ваш бюджет на день: " + dayBudget); 
+    appData.moneyPerDay = appData.budget / 30; 
+ alert( "Ваш бюджет на день: " + appData.moneyPerDay + "грн"); 
+
+ 
 
 
 
